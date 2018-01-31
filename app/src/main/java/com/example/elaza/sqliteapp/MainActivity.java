@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
     EditText editTextName,editTextSurname,editTextMarks,editTextId;
-    Button btnAddData,btnViewAll,btnUpdate;
+    Button btnAddData,btnViewAll,btnUpdate,btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         btnAddData  = findViewById(R.id.button_add);
         btnViewAll = findViewById(R.id.button_view);
         btnUpdate = findViewById(R.id.button_update);
+        btnDelete = findViewById(R.id.button_delete);
 
         btnAddData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +75,19 @@ public class MainActivity extends AppCompatActivity {
 
                 }else
                     Toast.makeText(MainActivity.this, "NO se ha podido actualizar correctamente", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer isDelete = myDb.deleteData(editTextId.getText().toString());
+                if (isDelete>0){
+                    Toast.makeText(MainActivity.this, "Se han borrado ", Toast.LENGTH_LONG).show();
+
+
+                }else
+                    Toast.makeText(MainActivity.this, "NO se ha podido borrar", Toast.LENGTH_LONG).show();
             }
         });
 
