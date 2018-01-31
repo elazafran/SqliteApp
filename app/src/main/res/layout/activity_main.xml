@@ -97,4 +97,45 @@
         tools:layout_editor_absoluteX="56dp"
         tools:layout_editor_absoluteY="244dp" />
 
+    <Button
+        android:id="@+id/button_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText_marks"
+        android:layout_alignRight="@+id/editText_marks"
+        android:layout_below="@+id/editText_marks"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:text="View All" />
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_view"
+        android:layout_marginTop="29dp"
+        android:layout_toEndOf="@+id/button_add"
+        android:layout_toRightOf="@+id/button_add"
+        android:text="Update" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="36dp"
+        android:text="id" />
+
+    <EditText
+        android:id="@+id/editText_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText_marks"
+        android:layout_alignStart="@+id/editText_marks"
+        android:layout_alignTop="@+id/textView4"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
 </RelativeLayout>
