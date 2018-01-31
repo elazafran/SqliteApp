@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
-    EditText editTextName,editTextSurname,editTextMarks;
+    EditText editTextName,editTextSurname,editTextMarks,editTextId;
     Button btnAddData,btnViewAll,btnUpdate;
 
     @Override
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         editTextName  = findViewById(R.id.editText_name);
         editTextSurname  = findViewById(R.id.editText_surname);
         editTextMarks  = findViewById(R.id.editText_marks);
+        editTextId = findViewById(R.id.editText_id);
         btnAddData  = findViewById(R.id.button_add);
         btnViewAll = findViewById(R.id.button_view);
         btnUpdate = findViewById(R.id.button_update);
@@ -66,8 +67,13 @@ public class MainActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean isInserted = myDb.insertData(editTextName.getText().toString(),editTextSurname.getText().toString(),editTextMarks.getText().toString());
+                boolean isUpdate = myDb.updateData(editTextId.getText().toString(),editTextName.getText().toString(),editTextSurname.getText().toString(),editTextMarks.getText().toString());
+                if (isUpdate==true){
+                    Toast.makeText(MainActivity.this, "Se ha actualizado correctamente", Toast.LENGTH_LONG).show();
 
+
+                }else
+                    Toast.makeText(MainActivity.this, "NO se ha podido actualizar correctamente", Toast.LENGTH_LONG).show();
             }
         });
 
